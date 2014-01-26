@@ -75,13 +75,16 @@ setup(
         "Environment :: Web Environment",
         "License :: OSI Approved :: BSD License",
         "Programming Language :: Python",
-        "Programming Language :: Python",
         "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.2",
+        #"Programming Language :: Python :: 3.3",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: POSIX",
+        "Topic :: Utilities",
         "Topic :: Internet",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries",
         "Development Status :: 5 - Production/Stable"
         ])
