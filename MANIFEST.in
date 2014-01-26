@@ -1,0 +1,16 @@
+include *.txt *.md *.rst Makefile *.py
+recursive-include fast_utils *.py
+recursive-exclude fast_utils *.pyo *.pyc
+recursive-include docs/source *.txt *.py *.rst *.md *
+recursive-exclude docs/source/images/ *.png
+recursive-exclude docs/source/images *.png
+recursive-exclude docs/build/ *
+recursive-exclude docs/source/_static/*
+recursive-exclude docs/source/_static/ *
+recursive-exclude docs *.pyc
+recursive-exclude docs *.pyo
+recursive-exclude tests *.pyc
+recursive-exclude tests *.pyo
+recursive-include examples *.py
+recursive-exclude examples *.pyc
+recursive-exclude examples *.pyo
