@@ -38,14 +38,16 @@ class PrettyTimer(Timer):
                 print("%d loops, best of %d: %.*g sec per loop" % (number, repeat, precision, sec))
 
 
+
 class PrettyTime(object):
 
 
-    def __init__(self, f, number=default_number, repeat=default_repeat):
+    def __init__(self, f, name=None, number=default_number, repeat=default_repeat):
         self.f = f
         self._code = None
         self._number = number
         self._repeat = repeat
+        self._name = name
 
     def __call__(self, s):
         self._code = s
@@ -56,16 +58,17 @@ class PrettyTime(object):
     def __exit__(self, exc_type, exc_value, traceback):
         t = PrettyTimer(setup=self.setup, stmt=self.code)
 
-        print("Measure {0}".format(self.f.func_name))
+        print("Measure {0}".format(self._name or self.f.func_name))
         t.pretty_repeat(self._repeat, self._number)
 
     @property
     def code(self):
-        return "{0}({1})".format(self.f.func_name, self._code)
+        return "{0}({1})".format(self._name or self.f.func_name, self._code)
 
     @property
     def setup(self):
-        return "from {0} import {1}".format(self.f.__module__, self.f.func_name)
+
+        return "from {0} import {1}".format(self.f.__module__, self._name or self.f.func_name)
 
     def eval(self):
         return self.f(*eval(self._code))

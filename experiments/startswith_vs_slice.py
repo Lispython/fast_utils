@@ -44,11 +44,11 @@ if __name__ == '__main__':
 
         print(part + "\r\n" + "=" * len(part))
 
-        with PrettyTime(test_startswith, 2000000) as pt:
+        with PrettyTime(test_startswith, None, 20000) as pt:
             pt(arg)
             assert bool(pt.eval()) == test_res, "Wrong result"
 
-        with PrettyTime(test_slice, 2000000) as pt:
+        with PrettyTime(test_slice, None, 20000) as pt:
             pt(arg)
             assert bool(pt.eval()) == test_res, "Wrong result"
 
