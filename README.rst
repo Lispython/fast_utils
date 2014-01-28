@@ -5,7 +5,7 @@ fast-utils is a collection of small Python function that can make you scripts mo
 This collection is organized package of receipts and experiments founded in the Internet.
 
 
-.. image:: https://travis-ci.org/Lispython/fast-utils.png
+.. image:: https://api.travis-ci.org/Lispython/fast_utils.png
 	   :target: https://travis-ci.org/Lispython/fast-utils
 
 
