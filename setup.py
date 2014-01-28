@@ -24,7 +24,7 @@ except Exception as e:
     print(e)
     readme_content = __doc__
 
-VERSION = "0.0.3"
+VERSION = "0.0.4"
 
 
 def run_tests():
@@ -63,7 +63,6 @@ setup(
     url="https://github.com/Lispython/fast_utils",
     #packages=['fast_utils'],
     packages=find_packages(exclude=("tests", "tests.*",)),
-    #package_dir={'': 'fast_utils'},
     include_package_data=True,
     install_requires=install_require,
     setup_requires=setup_requires,

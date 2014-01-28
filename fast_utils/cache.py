@@ -12,6 +12,8 @@ Cache and memoization functions
 
 """
 
+__all__ = "memo", "simple_memo"
+
 import functools
 
 from fast_utils.exceptions import NotMemoizedError

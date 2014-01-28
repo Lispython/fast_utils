@@ -12,10 +12,10 @@ Cache tests for fast utils.
 """
 
 
-from fast_utils.cache import memo
+from fast_utils.cache import memo, simple_memo
 
 
-def test_fib():
+def test_memo():
 
     @memo()
     def fib(n):
@@ -27,3 +27,12 @@ def test_fib():
 
     fib.clear_cache()
     assert fib.cache_info() == {'get': 0, 'missing': 0, 'resets': 1}
+
+
+def test_simple_memo():
+
+    @simple_memo
+    def fib(n):
+        return n if n < 2 else fib(n-2) + fib(n-1)
+
+    assert fib(10) == 55

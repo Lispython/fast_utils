@@ -11,7 +11,7 @@ Tests for fast utils.
 :github: http://github.com/Lispython/fast-utils
 """
 
-from fast_utils.string import startswith, extract_if_startswith
+from fast_utils.fstring import startswith, extract_if_startswith
 
 
 def test_startswith():

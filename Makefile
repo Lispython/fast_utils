@@ -8,7 +8,8 @@ test:
 	python setup.py test
 
 travis:
-	python setup.py test
+	py.test tests/
+
 
 shell:
 	../venv/bin/ipython

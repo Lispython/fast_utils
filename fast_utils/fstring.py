@@ -12,6 +12,8 @@ fast utils for manipulate with strings
 :github: http://github.com/Lispython/fast-utils
 """
 
+__all__ = "startswith", "extract_if_startswith"
+
 def startswith(s, substring):
     """Test that s starts with substring
 
