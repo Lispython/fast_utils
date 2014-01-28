@@ -84,3 +84,15 @@ def memo():
                     self.to_simple(list(args)), self.to_simple(kwargs))
 
     return decorator
+
+
+
+def simple_memo(f):
+    """Simple memoization for one argument functions
+    """
+    class memodict(dict):
+        __slots__ = ()
+        def __missing__(self, key):
+            self[key] = ret = f(key)
+            return ret
+    return memodict().__getitem__
