@@ -73,7 +73,7 @@ def memo():
 
         def to_simple(self, value):
             if isinstance(value, list):
-                return tuple(sorted((self.to_simple(x) for x in value)))
+                return tuple((self.to_simple(x) for x in value))
             elif isinstance(value, dict):
                 return tuple(sorted((k, self.to_simple(v)) for k, v in value.items()))
             else:
