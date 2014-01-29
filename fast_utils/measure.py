@@ -10,7 +10,7 @@ Timeit helpers for experiments
 :license: BSD, see LICENSE for more details.
 :github: http://github.com/Lispython/fast_utils
 """
-
+import time
 from timeit import Timer, default_number, default_repeat
 
 
@@ -74,10 +74,14 @@ class PrettyTime(object):
         return self.f(*eval(self._code))
 
 
-## def show_results(result):
-##     "Print results in terms of microseconds per pass and per item."
-##     global count, range_size
-##     per_pass = 1000000 * (result / count)
-##     print '%.2f usec/pass' % per_pass,
-##     per_item = per_pass / range_size
-##     print '%.2f usec/item' % per_item
+class measure_time(object):
+    def __init__(self,name):
+        self.name = name
+
+    def __enter__(self):
+        self.start = time.time()
+
+    def __exit__(self,ty,val,tb):
+        end = time.time()
+        print("%s : %0.3f seconds" % (self.name, end-self.start))
+        return False

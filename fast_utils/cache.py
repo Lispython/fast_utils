@@ -99,3 +99,21 @@ def simple_memo(f):
             self[key] = ret = f(key)
             return ret
     return memodict().__getitem__
+
+
+class Cache(dict):
+    __slots__ = ()
+
+    def __call__(self, f, *args):
+
+        import ipdb; ipdb.set_trace()
+        try:
+            return self[[f.func_name] + args]
+        except IndexError:
+            self[[f.func_name] + args] = ret = f(*args)
+            return ret
+
+    ## def __missing__(self, key):
+    ##     import ipdb; ipdb.set_trace()
+    ##     self[key] = ret = key[0](*key[1:])
+    ##     return ret
